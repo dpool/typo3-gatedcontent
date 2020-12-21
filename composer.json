@@ -1,0 +1,69 @@
+{
+  "name": "dpool/typo3-gatedcontent",
+  "type": "typo3-cms-extension",
+  "description": "This typo3 extension grants access to a protected page or document after entering personal data.",
+  "homepage": "https://www.github.com/dpool/typo3-gatedcontent/",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://www.github.com/dpool/typo3-gatedcontent/"
+    }
+  ],
+  "keywords": [
+    "TYPO3 CMS"
+  ],
+  "support": {
+    "issues": "https://www.github.com/dpool/typo3-gatedcontent/issues"
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "typo3/cms-core": "^10.4",
+    "typo3/cms-extbase": "^10.4",
+    "lcobucci/jwt": "^3.4"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "require-dev": {
+    "typo3/testing-framework": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dpool\\Gatedcontent\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dpool\\Gatedcontent\\Tests\\": "Tests/"
+    }
+  },
+  "replace": {
+    "dpool/gatedcontent": "self.version",
+    "typo3-ter/gatedcontent": "self.version"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "gatedcontent",
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "authors": [
+    {
+      "name": "Daniel Thomas",
+      "email": "dev@dpool.com",
+      "role": "Developer",
+      "homepage": "https://www.dpool.com/"
+    }
+  ]
+}
